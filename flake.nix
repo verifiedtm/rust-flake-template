@@ -25,6 +25,8 @@
 
             # other tools
             pkgs.fd
+            pkgs.just
+            pkgs.nixfmt
           ];
 
           RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
