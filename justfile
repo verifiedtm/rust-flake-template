@@ -8,8 +8,8 @@ nixfmt:
     fd --hidden --no-ignore --type f --extension nix --exec-batch nixfmt
 
 [group('format')]
-rustfmt:
-    fd --hidden --no-ignore --type f --extension rs --exec-batch rustfmt --edition 2024
+cargo-fmt:
+    cargo fmt --all
 
 [group('format')]
 just-format:
@@ -17,7 +17,7 @@ just-format:
 
 [group('format')]
 [parallel]
-format: rustfmt nixfmt just-format
+format: cargo-fmt nixfmt just-format
 
 [group('build')]
 cargo-build crate="":
